@@ -1,5 +1,3 @@
 def subtraction(a, b):
-    a = float(a)
-    b = float(b)
-    c = b - a
+    c = float(b) - float(a)
     return c
