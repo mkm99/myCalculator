@@ -1,2 +1,2 @@
-def division(a, b):
-    return float(b) / float(a)
+def division(dividend, divisor):
+    return float(dividend) / float(divisor)

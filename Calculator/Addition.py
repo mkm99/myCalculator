@@ -1,2 +1,2 @@
-def addition(a, b):
-    return float(a) + float(b)
+def addition(augend, addend):
+    return float(augend) + float(addend)

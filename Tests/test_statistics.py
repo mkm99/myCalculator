@@ -9,6 +9,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(5)
         self.testData = randint(0, 10, 20)
+        pprint.pprint(self.testData)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -17,7 +18,7 @@ class MyTestCase(unittest.TestCase):
     def test_mean_calculator(self):
         mean = self.statistics.mean(self.testData)
         self.assertEqual(mean, 4.25)
-
+        #self.assertEqual(4.25, mean)
 
 if __name__ == '__main__':
     unittest.main()
