@@ -1,8 +1,18 @@
 # Set a seed and randomly.select the same value from a list
+import random
+from RandomGenerator.pickRandom import PickRandomly
 
 class PickSeed():
     @staticmethod
     def pickSeed(theSeed, aList):
-        listLen = len(aList)
-        position = random.randint(0, listLen - 1)
-        return aList[position]
+        random.seed(theSeed)
+
+        return PickRandomly.pick(aList)
+
+'''
+        if int(value) >= listLen:
+            position = listLen/2
+        else:
+            position = value
+'''
+
