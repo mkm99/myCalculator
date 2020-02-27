@@ -28,17 +28,18 @@ class MyTestCase(unittest.TestCase):
     def test_Random_Seed_Int(self):
     #def test_Random_Seed_Int(self, mySeed):
         result = RandomSeed.randomInt(3, 0, 10)
-        #result2 = RandomSeed.randomInt(3, 0, 10)
+        result2 = RandomSeed.randomInt(3, 0, 10)
 
         #result1 = RandomSeed.randomInt(mySeed, 0, 10)
         #result2 = RandomSeed.randomInt(mySeed, 0, 10)
 
         #pprint.pprint(result1)
-        self.assertEqual(result,3)
-
+        #self.assertEqual(result,3)
+        self.assertEqual(result, result2)
     def test_Random_Seed_Float(self):
         result = RandomSeed.randomFloat(3, 0, 10)
-        self.assertEqual(result, 2.3796462709189137)
+        result2 = RandomSeed.randomFloat(3, 0, 10)
+        self.assertEqual(result, result2)
 
 
     def test_Make_List_Ints(self):

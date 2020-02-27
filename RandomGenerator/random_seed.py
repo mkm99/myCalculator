@@ -7,9 +7,11 @@ class RandomSeed():
     @staticmethod
     def randomInt(theSeed, num1, num2):
         #seed(theSeed)
+        #check if this will work
+        random.seed(theSeed)
         #ranNum = random.randint(num1,num2)
         if isinstance(num1, float):
-            return RandomSeed.randomFloat(num1, num2)
+            return RandomSeed.randomFloat(theSeed, num1, num2)
 
         #return ranNum
         return random.randint(num1,num2)
@@ -17,6 +19,7 @@ class RandomSeed():
     @staticmethod
     def randomFloat(theSeed, num1, num2):
         #seed(theSeed)
+        random.seed(theSeed)
         ranNum = random.uniform(num1, num2)
 
         return ranNum
@@ -28,5 +31,5 @@ class RandomSeed():
     pprint.pprint(self.testData)
     self.statistics = Statistics()
 '''
-#print(RandomSeed.randomInt(1, 20))
-#print(RandomSeed.randomInt(2.3, 9.9))
+print(RandomSeed.randomInt(5, 1, 20))
+print(RandomSeed.randomInt(2, 2.3, 9.9))
