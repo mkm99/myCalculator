@@ -7,7 +7,7 @@ import pprint
 from RandomGenerator.random_no_seed import RandomNoSeed
 from RandomGenerator.random_seed import RandomSeed
 from RandomGenerator.random_list import RandomList
-from RandomGenerator.pick_from_list import PickRandomly
+from RandomGenerator.pickRandom import PickRandomly
 
 
 class MyTestCase(unittest.TestCase):
@@ -15,7 +15,7 @@ class MyTestCase(unittest.TestCase):
         self.mySeed = seed(3)
         #self.setNumber = randint(1,10)
         self.aList = randint(0, 20, 10)
-        pprint.pprint(self.aList)
+        #pprint.pprint(self.aList)
 
     def test_Random_No_Seed_Int(self):
         result = RandomNoSeed.randomInt(0, 10)
@@ -53,7 +53,11 @@ class MyTestCase(unittest.TestCase):
     def test_Pick_Random_Number(self):
         myList = RandomList.list_Of_Ints(0, 10, 10, 3)
         result = PickRandomly.pick(myList)
+        #pprint.pprint(result)
         self.assertEqual(result, 1)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
