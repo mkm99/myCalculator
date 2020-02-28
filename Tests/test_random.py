@@ -9,6 +9,8 @@ from RandomGenerator.random_seed import RandomSeed
 from RandomGenerator.random_list import RandomList
 from RandomGenerator.pickRandom import PickRandomly
 from RandomGenerator.pickSeed import PickSeed
+from RandomGenerator.N_numbers_from_list import PickNumbersNoSeed
+
 
 
 class MyTestCase(unittest.TestCase):
@@ -63,7 +65,11 @@ class MyTestCase(unittest.TestCase):
         result = PickSeed.pickSeed(3, myList)
         self.assertEqual(result, 2)
 
-
+    def test_N_numbers_from_List(self):
+        myList = RandomList.list_Of_Ints(0, 10, 10 ,3)
+        result = PickNumbersNoSeed.pickNumbers(myList, 5)
+        self.assertEqual(result, [1, 3, 10, 5, 9])
+    
 
 
 
