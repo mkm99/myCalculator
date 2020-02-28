@@ -9,7 +9,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(5)
         self.testData = randint(0, 10, 20)
-        pprint.pprint(self.testData)
+        #pprint.pprint(self.testData)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):

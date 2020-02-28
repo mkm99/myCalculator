@@ -1,7 +1,6 @@
 import unittest
 from random import seed
 from numpy.random import randint
-
 import pprint
 
 from RandomGenerator.random_no_seed import RandomNoSeed
