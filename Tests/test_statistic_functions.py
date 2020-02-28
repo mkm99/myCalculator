@@ -8,7 +8,7 @@ from StatisticsFunctions.median import Median
 from StatisticsFunctions.meanDeviation import MeanDeviation
 from StatisticsFunctions.mode import Mode
 #from StatisticsFunctions.populationCorrelation import PopulationCorrelation
-#from StatisticsFunctions.quartiles import Quartiles
+from StatisticsFunctions.quantiles import Quantile
 #from StatisticsFunctions.sampleCorrelation import SampleCorrelation
 #from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
@@ -47,6 +47,10 @@ class MyTestCase(unittest.TestCase):
     def test_meanDeviation(self):
         meanDeviation = MeanDeviation.meanDeviation(self.testData)
         self.assertEqual(meanDeviation, 12.459999999999999)
+
+    def test_quantiles(self):
+        quantiles = Quantile.quantile(self.testData)
+        self.assertEqual(quantiles, (14.75, 27.0, 38.25))
 
 
 
