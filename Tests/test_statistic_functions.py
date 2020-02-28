@@ -13,7 +13,7 @@ from StatisticsFunctions.quantiles import Quantile
 from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
 from StatisticsFunctions.variance import Variance
-#from StatisticsFunctions.z_score import Z_score
+from StatisticsFunctions.z_score import Z_score
 
 
 
@@ -21,12 +21,12 @@ from StatisticsFunctions.variance import Variance
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(5)
-        self.testData = randint(0, 50, 20)
+        self.testData = randint(0, 50, 15)
         #pprint(self.testData)
 
     def test_mean(self):
         mean = Mean.mean(self.testData)
-        self.assertEqual(mean, 26.4)
+        self.assertEqual(mean, 25.466666666666665)
 
     def test_median(self):
         median = Median.median(self.testData)
@@ -34,11 +34,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_standardDeviation(self):
         standardDeviation = StandardDeviation.standardDeviation(self.testData)
-        self.assertEqual(standardDeviation, 13.904675472660266)
+        self.assertEqual(standardDeviation, 14.01364414498321)
 
     def test_variance(self):
         variance = Variance.variance(self.testData)
-        self.assertEqual(variance, 193.34)
+        self.assertEqual(variance, 196.3822222222222)
 
     def test_mode(self):
         mode = Mode.mode(self.testData)
@@ -46,15 +46,22 @@ class MyTestCase(unittest.TestCase):
 
     def test_meanDeviation(self):
         meanDeviation = MeanDeviation.meanDeviation(self.testData)
-        self.assertEqual(meanDeviation, 12.459999999999999)
+        self.assertEqual(meanDeviation, 12.835555555555555)
 
     def test_quantiles(self):
         quantiles = Quantile.quantile(self.testData)
-        self.assertEqual(quantiles, (14.75, 27.0, 38.25))
+        self.assertEqual(quantiles, (13.0, 27.0, 37.0))
 
     def test_skewness(self):
         skewness = Skewness.skewness(self.testData)
-        self.assertEqual(skewness, 0.16635904347274091)
+        self.assertEqual(skewness, 0.15182604770872699)
+
+    def test_z_score(self):
+        z_score = Z_score.z_score(self.testData)
+        #pprint(z_score)
+        self._getAssertEqualityFunc(z_score, [ 0.68028938, -0.81825017,  1.5365977 ,  0.89436646, -0.67553211,
+       -1.1750453 , -1.24640432,  0.75164841,  0.96572549,  0.10941717,
+        1.60795672,  0.32349425, -0.67553211, -1.31776335, -0.96096822])
 
 
 
