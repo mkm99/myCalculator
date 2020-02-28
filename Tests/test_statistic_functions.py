@@ -12,7 +12,7 @@ from StatisticsFunctions.median import Median
 #from StatisticsFunctions.sampleCorrelation import SampleCorrelation
 #from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
-#from StatisticsFunctions.variance import Variance
+from StatisticsFunctions.variance import Variance
 #from StatisticsFunctions.z_score import Z_score
 
 
@@ -35,6 +35,10 @@ class MyTestCase(unittest.TestCase):
     def test_standardDeviation(self):
         standardDeviation = StandardDeviation.standardDeviation(self.testData)
         self.assertEqual(standardDeviation, 13.904675472660266)
+
+    def test_variance(self):
+        variance = Variance.variance(self.testData)
+        self.assertEqual(variance, 193.34)
 
 
 if __name__ == '__main__':
