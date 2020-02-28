@@ -5,8 +5,8 @@ from pprint import pprint
 
 from StatisticsFunctions.mean import Mean
 from StatisticsFunctions.median import Median
-#from StatisticsFunctions.meanDeviation import MeanDeviation
-#from StatisticsFunctions.mode import Mode
+from StatisticsFunctions.meanDeviation import MeanDeviation
+from StatisticsFunctions.mode import Mode
 #from StatisticsFunctions.populationCorrelation import PopulationCorrelation
 #from StatisticsFunctions.quartiles import Quartiles
 #from StatisticsFunctions.sampleCorrelation import SampleCorrelation
@@ -39,6 +39,15 @@ class MyTestCase(unittest.TestCase):
     def test_variance(self):
         variance = Variance.variance(self.testData)
         self.assertEqual(variance, 193.34)
+
+    def test_mode(self):
+        mode = Mode.mode(self.testData)
+        self.assertEqual(mode, 16)
+
+    def test_meanDeviation(self):
+        meanDeviation = MeanDeviation.meanDeviation(self.testData)
+        self.assertEqual(meanDeviation, 12.459999999999999)
+
 
 
 if __name__ == '__main__':
