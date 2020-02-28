@@ -10,7 +10,7 @@ from StatisticsFunctions.mode import Mode
 #from StatisticsFunctions.populationCorrelation import PopulationCorrelation
 from StatisticsFunctions.quantiles import Quantile
 #from StatisticsFunctions.sampleCorrelation import SampleCorrelation
-#from StatisticsFunctions.skewness import Skewness
+from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
 from StatisticsFunctions.variance import Variance
 #from StatisticsFunctions.z_score import Z_score
@@ -51,6 +51,10 @@ class MyTestCase(unittest.TestCase):
     def test_quantiles(self):
         quantiles = Quantile.quantile(self.testData)
         self.assertEqual(quantiles, (14.75, 27.0, 38.25))
+
+    def test_skewness(self):
+        skewness = Skewness.skewness(self.testData)
+        self.assertEqual(skewness, 0.16635904347274091)
 
 
 
