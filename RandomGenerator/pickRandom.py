@@ -2,7 +2,7 @@
 import random
 
 
-class PickRandomly:
+class PickRandomly():
     @staticmethod
     def pick(aList):
         listLen = len(aList)

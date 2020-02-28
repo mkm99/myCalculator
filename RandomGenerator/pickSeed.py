@@ -9,10 +9,3 @@ class PickSeed():
 
         return PickRandomly.pick(aList)
 
-'''
-        if int(value) >= listLen:
-            position = listLen/2
-        else:
-            position = value
-'''
-
