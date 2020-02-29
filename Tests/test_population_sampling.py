@@ -4,7 +4,9 @@ from numpy.random import randint
 from pprint import pprint
 
 from PopulationSamplingFunctions.simpleRandomSampling import SimpleRandomSampling
-from RandomGenerator.random_list import RandomList
+from PopulationSamplingFunctions.systematicSampling import SystSampling
+from PopulationSamplingFunctions.confidenceIntervalForPopulation import ConfIntervalPopulation
+from PopulationSamplingFunctions.confidenceIntervalForSample import ConfIntervalSample
 
 
 class MyTestCase(unittest.TestCase):
@@ -18,7 +20,19 @@ class MyTestCase(unittest.TestCase):
         sample = SimpleRandomSampling.generateSampling(3, self.testData, 5)
         self.assertEqual(sample, [8, 41, 43, 3, 21])
 
+    def test_systematic_sampling(self):
+        result = SystSampling.systSampling(self.testData)
+        self.assertEqual(result, [3, 21, 43, 21, 20])
 
+    def test_Confidence_Interval_Popul(self):
+        result = ConfIntervalPopulation.confidenceInterval(0.90, self.testData)
+        self.assertEqual(result, (15.581632402905116, 28.68503426376155))
+
+    def test_Confidence_Interval_Sample(self):
+        result = ConfIntervalSample.confidenceInterval(0.90, self.testData, 3, 5)
+        self.assertEqual(result, (5.6669372302865675, 40.73306276971343))
+
+        
 
 if __name__ == '__main__':
     unittest.main()
