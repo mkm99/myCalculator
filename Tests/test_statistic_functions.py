@@ -15,7 +15,8 @@ from StatisticsFunctions.standardDeviation import StandardDeviation
 from StatisticsFunctions.variance import Variance
 from StatisticsFunctions.z_score import Z_score
 from StatisticsFunctions.covariance import Covariance
-
+from StatisticsFunctions.populationCorrelation import PopCorrelation
+from StatisticsFunctions.sampleCorrelation import SampleCorrelation
 
 
 
@@ -67,9 +68,18 @@ class MyTestCase(unittest.TestCase):
 
     def test_covariance(self):
         covariance = Covariance.covariance(self.testData, self.testData2)
-        pprint(covariance)
-        self._getAssertEqualityFunc(covariance, [[210.40952381, -19.96190476],
-       [-19.96190476, 219.20952381]])
+        #pprint(covariance)
+        self.assertEqual(covariance, -19.961904761904755)
+
+    def test_popCorrelation(self):
+        result = PopCorrelation.correlation(self.testData, self.testData2)
+        self.assertEqual(result, -0.09958703367427517)
+
+    def test_sampleCorrelation(self):
+        #sampleA = PickNumbersSeed.pickNumbers(theSeed, dataA, dataB)
+        #sampleB = PickNumbersSeed.pickNumbers(theSeed, dataA, dataB)
+        result = SampleCorrelation.correlation(3, self.testData, self.testData2)
+        self.assertEqual(result, -0.5940762068478092)
 
 
 
