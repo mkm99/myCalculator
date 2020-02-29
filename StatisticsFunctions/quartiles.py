@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Quartile():
     @staticmethod
     def quartile(data):

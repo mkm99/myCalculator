@@ -14,6 +14,7 @@ from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
 from StatisticsFunctions.variance import Variance
 from StatisticsFunctions.z_score import Z_score
+from StatisticsFunctions.covariance import Covariance
 
 
 
@@ -22,7 +23,9 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(5)
         self.testData = randint(0, 50, 15)
+        self.testData2 = randint(1, 51, 15 )
         #pprint(self.testData)
+        #pprint(self.testData2)
 
     def test_mean(self):
         mean = Mean.mean(self.testData)
@@ -61,6 +64,14 @@ class MyTestCase(unittest.TestCase):
         self._getAssertEqualityFunc(z_score, [ 0.68028938, -0.81825017,  1.5365977 ,  0.89436646, -0.67553211,
        -1.1750453 , -1.24640432,  0.75164841,  0.96572549,  0.10941717,
         1.60795672,  0.32349425, -0.67553211, -1.31776335, -0.96096822])
+
+    def test_covariance(self):
+        covariance = Covariance.covariance(self.testData, self.testData2)
+        pprint(covariance)
+        self._getAssertEqualityFunc(covariance, [[210.40952381, -19.96190476],
+       [-19.96190476, 219.20952381]])
+
+
 
 
 
