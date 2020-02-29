@@ -2,8 +2,6 @@
 from numpy.random import seed
 import random
 
-from RandomGenerator.random_seed import RandomSeed
-from RandomGenerator.random_no_seed import RandomNoSeed
 
 class RandomList():
     @staticmethod

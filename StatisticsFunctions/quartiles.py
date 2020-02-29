@@ -1,8 +1,8 @@
 import numpy as np
 
-class Quantile():
+class Quartile():
     @staticmethod
-    def quantile(data):
+    def quartile(data):
         q1 = np.quantile(data, .25)
         q2 = np.quantile(data, .50)
         q3 = np.quantile(data, .75)

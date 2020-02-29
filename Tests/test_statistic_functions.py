@@ -8,7 +8,7 @@ from StatisticsFunctions.median import Median
 from StatisticsFunctions.meanDeviation import MeanDeviation
 from StatisticsFunctions.mode import Mode
 #from StatisticsFunctions.populationCorrelation import PopulationCorrelation
-from StatisticsFunctions.quantiles import Quantile
+from StatisticsFunctions.quartiles import Quartile
 #from StatisticsFunctions.sampleCorrelation import SampleCorrelation
 from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
@@ -48,9 +48,9 @@ class MyTestCase(unittest.TestCase):
         meanDeviation = MeanDeviation.meanDeviation(self.testData)
         self.assertEqual(meanDeviation, 12.835555555555555)
 
-    def test_quantiles(self):
-        quantiles = Quantile.quantile(self.testData)
-        self.assertEqual(quantiles, (13.0, 27.0, 37.0))
+    def test_quartiles(self):
+        quartiles = Quartile.quartile(self.testData)
+        self.assertEqual(quartiles, (13.0, 27.0, 37.0))
 
     def test_skewness(self):
         skewness = Skewness.skewness(self.testData)
@@ -58,7 +58,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_z_score(self):
         z_score = Z_score.z_score(self.testData)
-        #pprint(z_score)
         self._getAssertEqualityFunc(z_score, [ 0.68028938, -0.81825017,  1.5365977 ,  0.89436646, -0.67553211,
        -1.1750453 , -1.24640432,  0.75164841,  0.96572549,  0.10941717,
         1.60795672,  0.32349425, -0.67553211, -1.31776335, -0.96096822])
