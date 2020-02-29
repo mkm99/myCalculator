@@ -17,6 +17,7 @@ from StatisticsFunctions.z_score import Z_score
 from StatisticsFunctions.covariance import Covariance
 from StatisticsFunctions.populationCorrelation import PopCorrelation
 from StatisticsFunctions.sampleCorrelation import SampleCorrelation
+from StatisticsFunctions.populationProportion import PopulationProportion
 
 
 
@@ -78,6 +79,9 @@ class MyTestCase(unittest.TestCase):
         result = SampleCorrelation.correlation(3, self.testData, self.testData2)
         self.assertEqual(result, -0.5940762068478092)
 
+    def test_population_Proportion(self):
+        result = PopulationProportion.proportion(3, self.testData, 4)
+        self.assertEqual(result, 0.26666666666666666)
 
 
 

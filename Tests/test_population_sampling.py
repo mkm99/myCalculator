@@ -8,6 +8,7 @@ from PopulationSamplingFunctions.systematicSampling import SystSampling
 from PopulationSamplingFunctions.confidenceIntervalForPopulation import ConfIntervalPopulation
 from PopulationSamplingFunctions.confidenceIntervalForSample import ConfIntervalSample
 from PopulationSamplingFunctions.marginOfError import MarginOfError
+from PopulationSamplingFunctions.cochransSampleSize import Cochran
 
 
 class MyTestCase(unittest.TestCase):
@@ -37,6 +38,10 @@ class MyTestCase(unittest.TestCase):
         result = MarginOfError.margin(3, self.testData)
         #pprint(result)
         self.assertEqual(result, -14.133333333333335)
+
+    def test_Cochran(self):
+        result = Cochran.cochran(3, self.testData, 4)
+        self.assertEqual(result, 0.0010094984628091588)
 
 
 
