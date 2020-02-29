@@ -1,7 +1,7 @@
 '''
 Conchran Sample size utilizes z-value, which is obtained from looking at a table using the z-score
- for calculation purposes I used z-score just to get the formula done
- until I find out how to obtain the z-value
+for calculation purposes I used z-score just to get the formula done
+until I find out how to obtain the z-value
 '''
 
 
@@ -9,7 +9,7 @@ from StatisticsFunctions.z_score import Z_score
 from PopulationSamplingFunctions.marginOfError import MarginOfError
 from StatisticsFunctions.populationProportion import PopulationProportion
 from Calculator.Exponentiation import exponentiation
-from Calculator.Division import division
+
 
 class Cochran():
     @staticmethod

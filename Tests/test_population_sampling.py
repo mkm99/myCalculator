@@ -9,6 +9,8 @@ from PopulationSamplingFunctions.confidenceIntervalForPopulation import ConfInte
 from PopulationSamplingFunctions.confidenceIntervalForSample import ConfIntervalSample
 from PopulationSamplingFunctions.marginOfError import MarginOfError
 from PopulationSamplingFunctions.cochransSampleSize import Cochran
+from PopulationSamplingFunctions.findSampleSizeUnknonwPopulation import SampleSizeUnkPopul
+from PopulationSamplingFunctions.findSampleSizeKnownPopulation import SampleSizeKnown
 
 
 class MyTestCase(unittest.TestCase):
@@ -42,6 +44,15 @@ class MyTestCase(unittest.TestCase):
     def test_Cochran(self):
         result = Cochran.cochran(3, self.testData, 4)
         self.assertEqual(result, 0.0010094984628091588)
+
+    def test_sample_size_unkown(self):
+        result = SampleSizeUnkPopul.sampleSize(3 , self.testData, 0.41)
+        self.assertEqual(result, 0.0012487381269214882)
+
+    def test_sample_size_known(self):
+        result = SampleSizeKnown.sampleSize(3, self.testData)
+        self.assertEqual(result, 1.0)
+
 
 
 
