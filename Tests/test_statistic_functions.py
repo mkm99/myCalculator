@@ -61,10 +61,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(skewness, 0.15182604770872699)
 
     def test_z_score(self):
-        z_score = Z_score.z_score(self.testData)
-        self._getAssertEqualityFunc(z_score, [ 0.68028938, -0.81825017,  1.5365977 ,  0.89436646, -0.67553211,
-       -1.1750453 , -1.24640432,  0.75164841,  0.96572549,  0.10941717,
-        1.60795672,  0.32349425, -0.67553211, -1.31776335, -0.96096822])
+        z_score = Z_score.z_score(2, self.testData)
+        self.assertEqual(z_score, -1.3177633508895406)
 
     def test_covariance(self):
         covariance = Covariance.covariance(self.testData, self.testData2)
@@ -76,8 +74,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, -0.09958703367427517)
 
     def test_sampleCorrelation(self):
-        #sampleA = PickNumbersSeed.pickNumbers(theSeed, dataA, dataB)
-        #sampleB = PickNumbersSeed.pickNumbers(theSeed, dataA, dataB)
+
         result = SampleCorrelation.correlation(3, self.testData, self.testData2)
         self.assertEqual(result, -0.5940762068478092)
 

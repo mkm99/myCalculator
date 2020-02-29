@@ -7,6 +7,7 @@ from PopulationSamplingFunctions.simpleRandomSampling import SimpleRandomSamplin
 from PopulationSamplingFunctions.systematicSampling import SystSampling
 from PopulationSamplingFunctions.confidenceIntervalForPopulation import ConfIntervalPopulation
 from PopulationSamplingFunctions.confidenceIntervalForSample import ConfIntervalSample
+from PopulationSamplingFunctions.marginOfError import MarginOfError
 
 
 class MyTestCase(unittest.TestCase):
@@ -32,7 +33,12 @@ class MyTestCase(unittest.TestCase):
         result = ConfIntervalSample.confidenceInterval(0.90, self.testData, 3, 5)
         self.assertEqual(result, (5.6669372302865675, 40.73306276971343))
 
-        
+    def test_Margin_Error(self):
+        result = MarginOfError.margin(3, self.testData)
+        #pprint(result)
+        self.assertEqual(result, -14.133333333333335)
+
+
 
 if __name__ == '__main__':
     unittest.main()
