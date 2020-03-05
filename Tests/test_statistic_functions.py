@@ -7,9 +7,7 @@ from StatisticsFunctions.mean import Mean
 from StatisticsFunctions.median import Median
 from StatisticsFunctions.meanDeviation import MeanDeviation
 from StatisticsFunctions.mode import Mode
-#from StatisticsFunctions.populationCorrelation import PopulationCorrelation
 from StatisticsFunctions.quartiles import Quartile
-#from StatisticsFunctions.sampleCorrelation import SampleCorrelation
 from StatisticsFunctions.skewness import Skewness
 from StatisticsFunctions.standardDeviation import StandardDeviation
 from StatisticsFunctions.variance import Variance
