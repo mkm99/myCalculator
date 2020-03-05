@@ -41,5 +41,8 @@ class MyTestCase(unittest.TestCase):
     def test_squareRoot(self):
         self.assertEqual(5, squareRoot(25))
 
+    def test_division_0(self):
+        self.assertEqual(3, division(2,0))
+
 if __name__ == '__main__':
     unittest.main()

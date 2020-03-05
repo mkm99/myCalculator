@@ -1,2 +1,3 @@
 def division(dividend, divisor):
-    return float(dividend) / float(divisor)
+    try:
+        return float(dividend) / float(divisor)

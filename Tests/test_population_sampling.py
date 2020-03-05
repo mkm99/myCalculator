@@ -17,8 +17,6 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(3)
         self.testData = randint(0, 50, 15)
-        #pprint(self.testData)
-
 
     def test_generate_sample(self):
         sample = SimpleRandomSampling.generateSampling(3, self.testData, 5)
@@ -38,7 +36,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_Margin_Error(self):
         result = MarginOfError.margin(3, self.testData)
-        #pprint(result)
         self.assertEqual(result, -14.133333333333335)
 
     def test_Cochran(self):
@@ -52,8 +49,6 @@ class MyTestCase(unittest.TestCase):
     def test_sample_size_known(self):
         result = SampleSizeKnown.sampleSize(3, self.testData)
         self.assertEqual(result, 1.0)
-
-
 
 
 if __name__ == '__main__':

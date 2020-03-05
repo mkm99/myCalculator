@@ -1,5 +1,7 @@
 from scipy.stats import sem, t
 from StatisticsFunctions.mean import Mean
+from pprint import pprint
+
 
 class ConfIntervalPopulation():
     @staticmethod

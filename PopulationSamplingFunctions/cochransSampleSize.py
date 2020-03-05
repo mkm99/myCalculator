@@ -26,4 +26,3 @@ class Cochran():
         cochran = (exponentiation(z,2) * p * q)/exponentiation(e,2)
 
         return cochran
-
