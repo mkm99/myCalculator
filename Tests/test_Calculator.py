@@ -42,7 +42,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(5, squareRoot(25))
 
     def test_division_0(self):
-        self.assertEqual(3, division(2,0))
+        self.assertEqual('Trying to divide by zero', division(2,0))
 
 if __name__ == '__main__':
     unittest.main()
